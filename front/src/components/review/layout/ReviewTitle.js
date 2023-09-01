@@ -10,7 +10,7 @@ import Timestamp from "../../common/microComponents/Timestamp";
 import * as Api from "../../../Api";
 
 const ReviewTitle = ({ review, setReviews }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { user: loggedInUser } = useContext(UserStateContext);
   const { openModal, modalVisible } = useModal();
   const isMyReview = loggedInUser && loggedInUser._id === review?.author;
@@ -25,13 +25,13 @@ const ReviewTitle = ({ review, setReviews }) => {
       setUser(res.data);
     };
     fetchUserData();
-  }, [review?.author]);
+  }, [review]);
 
   return (
     <div className="d-flex align-items-center justify-content-between link px-0 commentModal">
       <div
         className="px-0 review__title"
-        onClick={() => navigate(`/users/${review?.author}`)}
+        // onClick={() => navigate(`/users/${review?.author}`)}
       >
         <Avatar width="40" user={user} />
         <div

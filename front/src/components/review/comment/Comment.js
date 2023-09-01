@@ -44,7 +44,6 @@ const Comment = ({ comment, setComments, setNewComments, setCommentCount }) => {
   useEffect(() => {
     const getUserAvatar = async () => {
       const res = await Api.get(`users/${userId}`);
-      console.log(res.data);
       setUser(res.data);
     };
     getUserAvatar();

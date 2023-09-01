@@ -91,12 +91,7 @@ const NavBar = ({ avatarUrl, setAvatarUrl }) => {
                   <Nav.Link onClick={logout}>로그아웃</Nav.Link>
                 </Nav.Item>
                 {/* 아바타 */}
-                <Avatar
-                  width={30}
-                  user={user}
-                  avatarUrl={avatarUrl}
-                  setAvatarUrl={setAvatarUrl}
-                />
+                <Avatar width={30} user={user} />
               </>
             ) : (
               <Nav.Item>

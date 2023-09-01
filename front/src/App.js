@@ -72,7 +72,6 @@ function App() {
       if (!res.data) throw new Error("유저 정보를 받아올 수 없습니다");
       const currentUser = res.data;
       // dispatch 함수를 통해 로그인 성공 상태로 만듦.
-      console.log(res.data, "null 이어야함?");
       dispatch({
         type: "LOGIN_SUCCESS",
         payload: currentUser,

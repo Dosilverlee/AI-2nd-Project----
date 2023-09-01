@@ -24,9 +24,7 @@ const EditReview = ({
 
   const handleSubmit = useCallback(async () => {
     try {
-      console.log(editedReview);
       const validationError = validationReview(loggedInUser, editedReview);
-      console.log(validationError);
       if (validationError) {
         setShowToast(validationError.message, validationError.status);
         console.log(validationError.message);
@@ -37,13 +35,17 @@ const EditReview = ({
         title: editedReview.title,
         content: editedReview.content,
       });
-      console.log(res.data);
+
       if (!res.data) {
         return setUploadingStatus(RESULT_ENUM.FAIL);
       }
       setUploadingStatus(RESULT_ENUM.SUCCESS);
       closeModal();
-      setReviews((current) => [res.data, ...current]);
+      setReviews((current) => [
+        ...current,
+        editedReview.title,
+        editedReview.content,
+      ]);
       setEditedReview(null);
     } catch (error) {
       console.log(error);

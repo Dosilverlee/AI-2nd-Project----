@@ -29,7 +29,7 @@ const CarouselWrapper = ({ preview, setPreview, imageUrls }) => {
     });
   };
 
-  const urls = editingReviewImgUrls || imageUrls || preview;
+  const urls = editingReviewImgUrls || imageUrls || preview || [];
 
   const handleError = (e) => {
     e.target.src = DEFAULT_IMAGE_URL; // 대체 이미지로 변경
