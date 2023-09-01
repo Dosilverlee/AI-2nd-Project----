@@ -2,12 +2,11 @@ import React from "react";
 import { Image, Nav, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { DEFAULT_AVATAR } from "../../constants";
-import { serverUrl } from "../../Api";
 
 const Avatar = React.forwardRef(
   ({ width, user, avatarUrl, setAvatarUrl }, ref) => {
     const navigate = useNavigate();
-    const src = serverUrl + avatarUrl;
+    const src = `http://${window.location.hostname}${avatarUrl}`;
     const handleError = (e) => {
       e.target.src = DEFAULT_AVATAR; // 대체 이미지로 변경
     };
